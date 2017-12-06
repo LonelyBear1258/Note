@@ -811,4 +811,11 @@ select * from (select * from student where sex = "nv" ) bieming where height = 1
 ```
 
 ## 十、数据库备份
+ 数据库备份
+
+    mysqldump -uroot -p密码  数据库名>c:\文件名称.sql
+
+    数据库数据导入
+
+    mysql -uroot -p密码 数据库名<c:\文件名称.sql
 
