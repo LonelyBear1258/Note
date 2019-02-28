@@ -1,0 +1,12 @@
+暴风影音卸载后，文件夹无法删除，是因为BFDesktopShell.dll_del无法删除。具体解决方法如下：
+Step 1.在运行里输入cmd进入命令提示符。
+step 2.然后输入命令tasklist /m>c:\listdll.txt回车后，在C盘下会出现一个listdll.txt文本文件，这个文件里所示列出了目前运行的各个程序正在调用的dll文件。在用CTRL+F弹出查找框，输入自己要删除的的dll文件，查找出是哪个程序在调用这个dll文件。
+step 3.CTRL+ALT+DEL打开Windows资源管理器，结束占用需要删除dll文件的程序或着进程，这时再去删除这个dll文件就很轻松了。
+step 4.如果查出来的占用dll文件的进程是svhost.exe文件/进程，这个进程一般系统有7、8个至多，到底是哪个svhost.exe进程占用了这个dll文件呢？这是可以在命令提示符下输入tasklist /svc，当然，你也可以把它输出为文本文件tasklist /svc>C:\listsvc.txt。这时listsvc.txt文件里的svhost.exe会跟出所示的各个进程的PID号。这时就可以具体的根据PID号来结束进程，达到删除dll文件的目的。
+Step 5.如果是explore.exe调用的dll，则通过CMD命令实现
+1）taskkill /f /im "explorer.exe"
+2）删除文件夹
+rd /s/q "C:\Program Files\Baofeng"
+删除文件
+del /a/f/q“C:\Program Files\Baofeng\StormPlayer\BFDesktopShell.dll_del”
+Step 6.Ctrl+Alt+Delete启动任务管理器，“文件”-“新建任务（运行…）（N）”，输入exploer，点击“打开”。
