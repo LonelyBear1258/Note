@@ -10,3 +10,4 @@ rd /s/q "C:\Program Files\Baofeng"
 删除文件
 del /a/f/q“C:\Program Files\Baofeng\StormPlayer\BFDesktopShell.dll_del”
 Step 6.Ctrl+Alt+Delete启动任务管理器，“文件”-“新建任务（运行…）（N）”，输入exploer，点击“打开”。
+123
